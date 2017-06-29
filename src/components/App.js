@@ -40,7 +40,7 @@ class App extends Component {
       this.setState({ coords });
 
       const appId = "77f24c065514660d48a68b8d6a138ce2";
-      const base_url = "http://api.openweathermap.org/data/2.5/weather";
+      const base_url = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather";
 
       axios.get(base_url, {
           params: {

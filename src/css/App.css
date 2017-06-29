@@ -3,15 +3,12 @@ body {
   padding: 0;
   font-family: sans-serif;
   background-color: #cee1ff;
+  text-align: center;
+  font-family: "dutismo";
 }
 .App {
   padding: 2em;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-}
-
 .App-header {
   color: black;
 }
@@ -20,7 +17,21 @@ body {
   clear: both;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.temp {
+  line-height: .5em;
+  font-size: 4em;
+}
+.weather {
+  line-height: .5em;
+  font-size: 1.75em;
+  font-weight: normal;
+}
+.weather-icon {
+  line-height: .5em;
+  font-size: 2em;
+}
+.additional-info {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }

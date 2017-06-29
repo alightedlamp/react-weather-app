@@ -11,14 +11,15 @@ class Greeting extends Component {
         else if (period == "pm") return "Good evening!"
         else return "Hello!"
     }
+    getTime() {
+        return moment().format('MMMM Do YYYY, h:mm:ss a');
+    }
 
     render() {
-        const time = moment().format('MMMM Do YYYY, h:mm:ss a');
 
         return(
             <div>
-                <h1>{this.getGreeting(time)}</h1>
-                <h2>{time}</h2>
+                <h1>{this.getGreeting(this.getTime())}</h1>
             </div>
         )
     }

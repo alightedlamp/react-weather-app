@@ -1,15 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Typekit from 'react-typekit';
 
 import App from './components/App';
 
-import './css/App.css';
 import './css/weather-icons-wind.min.css';
 import './css/weather-icons.min.css';
+import './css/App.css';
 
 const Root = () => {
     return(
-        <App />
+        <div>
+            <App />
+            <Typekit kitId="eot1rpm" />
+        </div>
     )
 }
 
