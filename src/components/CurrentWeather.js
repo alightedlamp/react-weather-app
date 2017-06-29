@@ -3,12 +3,12 @@ import React, { Component } from 'react';
 class CurrentWeather extends Component {
     // toggleScale(scale, temp) {
     //     if (isFahrenheit) {
-    //         scale = 'celsius';
+    //         scale = "celsius";
     //         temp = (5/9) * (temp - 32);
     //         return temp;
     //     }
     //     else {
-    //         scale = 'fahrenheit';
+    //         scale = "fahrenheit";
     //         temp = (temp * 9/5) + 32
     //         return temp
     //     }
@@ -20,7 +20,7 @@ class CurrentWeather extends Component {
         let scale = "fahrenheit";
 
         const isFahrenheit = scale === "fahrenheit";
-        const buttonText = isFahrenheit ? "Fahrenheit" : "Celsius";
+        const buttonText = isFahrenheit ? "F" : "C";
 
         const weather = this.props.weather;
         const icon = this.props.icon;
