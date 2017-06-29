@@ -5,6 +5,7 @@ import icons from '../icons.json';
 
 import Greeting from './Greeting';
 import CurrentWeather from './CurrentWeather';
+import LocationForm from './LocationForm';
 
 class App extends Component {
   constructor() {
@@ -77,8 +78,12 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
+      <div className="app">
+        {/*<header>
+          <h1>Local Weather</h1>
+          <LocationForm />
+        </header>*/}
+        <div>
           <Greeting coords={this.state.coords} />
         </div>
         <CurrentWeather temp={this.state.temp} weather={this.state.weather} location={this.state.coords} icon={this.state.icon}/>

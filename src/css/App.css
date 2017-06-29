@@ -2,24 +2,63 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color: #cee1ff;
+  background-color: #d6efff;
   text-align: center;
-  font-family: "dutismo";
-}
-.App {
-  padding: 2em;
-}
-.App-header {
-  color: black;
-}
-.App-intro {
-  font-size: large;
-  clear: both;
+  font-family: "dutismo", "Helvetica", sans-serif;
+  box-sizing: border-box;
 }
 
+.app {
+  padding: 3em;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 6.5em;
+  background-color: white;
+}
+
+header {
+  padding: 2em;
+  background-color: #2d375e;
+  box-shadow: 2px 2px 2px 2px black;
+}
+header h1 {
+  margin: 0;
+}
+.location-form {
+  padding: 1em;
+}
+.location-form input {
+  padding: 10px;
+  border: 1px solid black;
+  border-right: 0;
+}
+.location-form button {
+  padding: 10px;
+  border: 1px solid black;
+  background-color: #cee1ff;
+  border-radius: 0;
+}
+.location-form button:hover {
+  background-color: black;
+  color: white;
+  transition: .2s;
+}
+.greeting {}
 .temp {
   line-height: .5em;
   font-size: 4em;
+}
+.scale-toggle {
+  background-color: #465696;
+  color: white;
+  border: 1px solid #465696;
+  text-transform: uppercase;
+}
+.scale-toggle:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  transition: .25s;
 }
 .weather {
   line-height: .5em;
@@ -33,5 +72,9 @@ body {
 .additional-info {
   list-style-type: none;
   margin: 0;
+  margin-top: 1em;
   padding: 0;
+}
+.additional-info li {
+  margin-top: 3px;
 }

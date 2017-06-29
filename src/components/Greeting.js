@@ -19,7 +19,7 @@ class Greeting extends Component {
 
         return(
             <div>
-                <h1>{this.getGreeting(this.getTime())}</h1>
+                <h2 className="greeting">{this.getGreeting(this.getTime())}</h2>
             </div>
         )
     }
