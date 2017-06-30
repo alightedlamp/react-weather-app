@@ -88,7 +88,6 @@ class App extends Component {
           <Greeting coords={this.state.coords} />
         </div>
         <CurrentWeather temp={this.state.temp} weather={this.state.weather} location={this.state.coords} icon={this.state.icon}/>
-
       </div>
     );
   }
