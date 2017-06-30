@@ -1,26 +1,15 @@
 import React, { Component } from 'react';
 
 class CurrentWeather extends Component {
-    // toggleScale(scale, temp) {
-    //     if (isFahrenheit) {
-    //         scale = "celsius";
-    //         temp = (5/9) * (temp - 32);
-    //         return temp;
-    //     }
-    //     else {
-    //         scale = "fahrenheit";
-    //         temp = (temp * 9/5) + 32
-    //         return temp
-    //     }
-    // }
-
+    getInitialState() {
+        return "loading...";
+    }
     render() {
         const temp = this.props.temp;
+        const tempF = parseInt(this.props.temp.temp);
+        const tempC = parseInt((5/9) * (tempF - 32));
 
-        let scale = "fahrenheit";
-
-        const isFahrenheit = scale === "fahrenheit";
-        const buttonText = isFahrenheit ? "F" : "C";
+        let currentTemp = this.props.temp.temp;
 
         const weather = this.props.weather;
         const icon = this.props.icon;
@@ -28,8 +17,7 @@ class CurrentWeather extends Component {
         return(
             <div>
                 <p className="weather-icon"><i className={icon}></i></p>
-                <h3>{weather.description}, {temp.temp}&deg;</h3>
-                <button onClick={() => this.toggleScale(temp.temp)} className="scale-toggle">{buttonText}</button>
+                <h3>{weather.description}, {tempF}&deg;F | {tempC}&deg;C</h3>
                 <ul className="additional-info">
                     <li>Humidity: {temp.humidity}%</li>
                     <li>Pressure: {temp.pressure}</li>

@@ -17,7 +17,7 @@ class App extends Component {
         coords: [],
         temp: {},
         weather: {},
-        icon: ""
+        icon: "",
     };
   }
 
@@ -42,12 +42,13 @@ class App extends Component {
 
       const appId = "77f24c065514660d48a68b8d6a138ce2";
       const base_url = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather";
+      const units = "imperial";
 
       axios.get(base_url, {
           params: {
               lat: coords[0],
               lon: coords[1],
-              units: "imperial",
+              units: units,
               APPID: appId
           }
       }).then(response => {

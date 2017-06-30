@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import moment from 'moment';
 
 class Greeting extends Component {
-    getGreeting(time) {
+    getGreeting() {
         // pull out am or pm and return relevant greeting
+        let time = moment().format('MMMM Do YYYY, h:mm:ss a');
         let period = time.split(", ")[1].toString();
         period = period.substring(period.length - 2);
 
@@ -11,15 +12,11 @@ class Greeting extends Component {
         else if (period == "pm") return "Good evening!"
         else return "Hello!"
     }
-    getTime() {
-        return moment().format('MMMM Do YYYY, h:mm:ss a');
-    }
 
     render() {
-
         return(
             <div>
-                <h2 className="greeting">{this.getGreeting(this.getTime())}</h2>
+                <h2 className="greeting">{this.getGreeting()}</h2>
             </div>
         )
     }
