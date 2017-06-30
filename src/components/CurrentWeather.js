@@ -8,9 +8,6 @@ class CurrentWeather extends Component {
         const temp = this.props.temp;
         const tempF = parseInt(this.props.temp.temp);
         const tempC = parseInt((5/9) * (tempF - 32));
-
-        let currentTemp = this.props.temp.temp;
-
         const weather = this.props.weather;
         const icon = this.props.icon;
 

@@ -17,7 +17,7 @@ class App extends Component {
         coords: [],
         temp: {},
         weather: {},
-        icon: "",
+        icon: ""
     };
   }
 
