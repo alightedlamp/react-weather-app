@@ -11,7 +11,7 @@ class Greeting extends Component {
         if (period === 'am') {
             greeting = 'Good morning!';
         }
-        else if (period === 'pm' && hour > 12 && hour > 5) {
+        else if (period === 'pm' && hour > 12 && hour < 5) {
             greeting = 'Good afternoon!';
         }
         else {

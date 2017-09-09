@@ -3,24 +3,13 @@ import React, { Component } from 'react';
 import compassIcon from '../img/compass.svg';
 
 class CurrentWeather extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            scale: 'F',
-            temp: {}
-        }
-        this.temp = this.props.temp;
-    }
-    swapScale() {
-
-    }
-    componentDidMount() {
-        this.setState({ temp: this.temp })
-    }
     render() {
-        const weather = this.props.weather;
+        const tempData = this.props.tempData;
+        const weatherData = this.props.weatherData;
+        const currentTemp = this.props.currentTemp;
+        const scale = this.props.scale;
         const icon = this.props.icon;
+        const toggleScale = this.props.toggleScale;
 
         return(
             <div>
@@ -33,13 +22,16 @@ class CurrentWeather extends Component {
                     </div>
                 )
                 }
-                {Object.keys(this.temp).length > 0 && Object.keys(weather).length > 0 &&
+                {Object.keys(tempData).length > 0 && Object.keys(weatherData).length > 0 &&
                     <div>
-                        <h3>{weather.description}, {this.state.temp.temp}&deg;{this.state.scale}</h3>
+                        <h3>{weatherData.description}, {currentTemp}&deg;{scale}</h3>
                         <ul className="additional-info">
-                            <li>Humidity: {this.state.temp.humidity}%</li>
-                            <li>Pressure: {this.state.temp.pressure}</li>
+                            <li>Humidity: {tempData.humidity}%</li>
+                            <li>Pressure: {tempData.pressure}</li>
                         </ul>
+                        <div>
+                            <button className="btn" onClick={() => toggleScale(currentTemp)}>Scale: {scale === 'F' ? 'C' : 'F'}</button>
+                        </div>
                     </div>
                 }
             </div>

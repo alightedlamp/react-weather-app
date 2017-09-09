@@ -12,11 +12,14 @@ class App extends Component {
     super();
 
     this.getWeather = this.getWeather.bind(this);
+    this.toggleScale = this.toggleScale.bind(this);
 
     this.state = {
         coords: [],
-        temp: {},
-        weather: {},
+        tempData: {},
+        weatherData: {},
+        scale: 'F',
+        currentTemp: '',
         icon: ""
     };
   }
@@ -52,18 +55,35 @@ class App extends Component {
               APPID: appId
           }
       }).then(response => {
-          const temp = response.data.main;
-          const weather = response.data.weather[0];
+          const tempData = response.data.main;
+          const weatherData = response.data.weather[0];
 
-          this.setState({ weather });
-          this.setState({ temp });
+          this.setState({
+            weatherData,
+            tempData,
+            currentTemp: tempData.temp
+          });
 
-          const icon = this.getIcon(weather);
+          const icon = this.getIcon(weatherData);
           this.setState({ icon });
-
-          console.log(weather);
-          console.log(temp);
       });
+  }
+  toggleScale(temp) {
+    let currentTemp;
+    if (this.state.scale === 'C') {
+      currentTemp = (this.state.currentTemp * 1.8) + 32;
+      this.setState({
+        scale: 'F',
+        currentTemp: currentTemp
+      });
+    }
+    else {
+      currentTemp = (this.state.currentTemp - 32) / 1.8;
+      this.setState({
+        scale: 'C',
+        currentTemp: currentTemp
+      });
+    }
   }
 
   componentDidMount() {
@@ -83,7 +103,7 @@ class App extends Component {
         <div>
           <Greeting coords={this.state.coords} />
         </div>
-        <CurrentWeather temp={this.state.temp} weather={this.state.weather} location={this.state.coords} icon={this.state.icon}/>
+        <CurrentWeather toggleScale={this.toggleScale} {...this.state} />
       </div>
     );
   }
