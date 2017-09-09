@@ -80,10 +80,6 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        {/*<header>
-          <h1>Local Weather</h1>
-          <LocationForm />
-        </header>*/}
         <div>
           <Greeting coords={this.state.coords} />
         </div>

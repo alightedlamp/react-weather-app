@@ -3,10 +3,22 @@ import React, { Component } from 'react';
 import compassIcon from '../img/compass.svg';
 
 class CurrentWeather extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            scale: 'F',
+            temp: {}
+        }
+        this.temp = this.props.temp;
+    }
+    swapScale() {
+
+    }
+    componentDidMount() {
+        this.setState({ temp: this.temp })
+    }
     render() {
-        const temp = this.props.temp;
-        const tempF = parseInt(this.props.temp.temp);
-        const tempC = parseInt((5/9) * (tempF - 32));
         const weather = this.props.weather;
         const icon = this.props.icon;
 
@@ -21,12 +33,12 @@ class CurrentWeather extends Component {
                     </div>
                 )
                 }
-                {Object.keys(temp).length > 0 && Object.keys(weather).length > 0 &&
+                {Object.keys(this.temp).length > 0 && Object.keys(weather).length > 0 &&
                     <div>
-                        <h3>{weather.description}, {tempF}&deg;F | {tempC}&deg;C</h3>
+                        <h3>{weather.description}, {this.state.temp.temp}&deg;{this.state.scale}</h3>
                         <ul className="additional-info">
-                            <li>Humidity: {temp.humidity}%</li>
-                            <li>Pressure: {temp.pressure}</li>
+                            <li>Humidity: {this.state.temp.humidity}%</li>
+                            <li>Pressure: {this.state.temp.pressure}</li>
                         </ul>
                     </div>
                 }
