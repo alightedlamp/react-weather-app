@@ -71,14 +71,14 @@ class App extends Component {
   toggleScale(temp) {
     let currentTemp;
     if (this.state.scale === 'C') {
-      currentTemp = (this.state.currentTemp * 1.8) + 32;
+      currentTemp = ((this.state.currentTemp * 1.8) + 32).toFixed(2);
       this.setState({
         scale: 'F',
         currentTemp: currentTemp
       });
     }
     else {
-      currentTemp = (this.state.currentTemp - 32) / 1.8;
+      currentTemp = ((this.state.currentTemp - 32) / 1.8).toFixed(2);
       this.setState({
         scale: 'C',
         currentTemp: currentTemp

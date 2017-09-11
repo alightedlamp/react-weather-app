@@ -34,6 +34,12 @@ header h1 {
   background-color: white;
   box-shadow: 2px 2px 0 #888;
 }
+.btn:hover {
+  background-color: #465696;
+  border-color: #465696;
+  color: white;
+  transition: .5s
+}
 .location-form {
   padding: 1em;
 }
